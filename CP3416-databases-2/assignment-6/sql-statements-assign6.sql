@@ -24,4 +24,20 @@ SET ship_line1 = "1990 Westwood Blvd."
 WHERE customer_id = 8;
 
 -- Q4
+CREATE VIEW order_item_products AS
+SELECT ord.order_id, ord.order_date, ord.tax_amount, ord.ship_date,
+	   prod.product_name, 
+       ord_item.item_price, ord_item.discount_amount, (ord_item.item_price - ord_item.discount_amount) AS final_price, 
+       ord_item.quantity, ((ord_item.item_price - ord_item.discount_amount) * ord_item.quantity) AS item_total
+FROM orders ord
+JOIN order_items ord_item ON ord.order_id = ord_item.order_id
+JOIN products prod ON ord_item.product_id = prod.product_id;
+
+SELECT * FROM order_item_products;
+DROP VIEW order_item_products;
+
+-- Q5
+CREATE VIEW product_summary AS
+
+
 
