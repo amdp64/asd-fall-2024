@@ -10,7 +10,7 @@ FROM customers cust, addresses bill, addresses ship
 WHERE cust.billing_address_id = bill.address_id 
 AND cust.shipping_address_id = ship.address_id;
 
-SELECT * FROM customer_addresses;
+-- SELECT * FROM customer_addresses;
 -- DROP VIEW customer_addresses;
 
 -- Q2
@@ -33,8 +33,8 @@ FROM orders ord
 JOIN order_items ord_item ON ord.order_id = ord_item.order_id
 JOIN products prod ON ord_item.product_id = prod.product_id;
 
-SELECT * FROM order_item_products;
-DROP VIEW order_item_products;
+-- SELECT * FROM order_item_products;
+-- DROP VIEW order_item_products;
 
 -- Q5
 CREATE VIEW product_summary AS
@@ -42,9 +42,13 @@ SELECT oip.product_name, oip.quantity AS order_count,
 	   ((oip.item_price - oip.discount_amount) * oip.quantity) AS order_total
 FROM order_item_products oip;
 
-SELECT * FROM product_summary;
+-- SELECT * FROM product_summary;
 
 -- Q6
+SELECT ps.product_name, ps.order_total
+FROM product_summary ps
+ORDER BY order_total DESC
+LIMIT 5;
 
 
 
