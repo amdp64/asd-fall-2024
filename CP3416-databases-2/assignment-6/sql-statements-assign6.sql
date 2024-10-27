@@ -38,6 +38,13 @@ DROP VIEW order_item_products;
 
 -- Q5
 CREATE VIEW product_summary AS
+SELECT oip.product_name, oip.quantity AS order_count,
+	   ((oip.item_price - oip.discount_amount) * oip.quantity) AS order_total
+FROM order_item_products oip;
+
+SELECT * FROM product_summary;
+
+-- Q6
 
 
 
