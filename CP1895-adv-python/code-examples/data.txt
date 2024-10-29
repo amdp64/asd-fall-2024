@@ -1,0 +1,7 @@
+bob,12,large,boy
+sue,33,small,girl
+fred,47,medium,boy
+paul,22,large,boy
+tim,21,small,boy
+patty,20,medium,girl
+sally,15,large,girl
