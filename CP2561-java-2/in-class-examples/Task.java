@@ -8,7 +8,7 @@ public class Task implements Runnable {
     }
 
     @Override
-    public void run() {
+    public synchronized void run() {
         // Task work goes here.
         // Strings are immutable, but should be able to add a bit on
         // and create a new string.
