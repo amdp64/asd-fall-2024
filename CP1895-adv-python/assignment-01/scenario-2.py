@@ -31,50 +31,53 @@ class Employee(Person):
 newObject = None
 
 def main():
-    print("Customer/Employee Data Entry\n")
+    print("Customer/Employee Data Entry")
     while True:
-        choice = input("Customer or employee (c/e): ")
-        global newObject
-        if (choice.lower() == 'c'):
-            print("DATA ENTRY")
-            fname = input("First name: ")
-            lname = input("Last name: ")
-            email = input("Email: ")
-            cust_no = input("Number: ")
-            # Create a new Customer object
-            newObject = Customer(fname.capitalize(), lname.capitalize(), email, cust_no)
-            break
-        elif (choice.lower() == 'e'):
-            print("DATA ENTRY")
-            fname = input("First name: ")
-            lname = input("Last name: ")
-            email = input("Email: ")
-            ssn = input("SSN: ")
-            # Create a new Employee object
-            newObject = Employee(fname.capitalize(), lname.capitalize(), email, ssn)
-            break
-        else:
-            print("Unknown command. Please try again.")
-    # Look at object created.
-    # Display the data to the user.
-    while True:
-        if (isinstance(newObject, Customer)):
-            print("\nCUSTOMER")
-            print(f"Name:\t\t{newObject.getFullName()}")
-            print(f"Email:\t\t{newObject.email}")
-            print(f"Number:\t\t{newObject.customer_no}")
-        
-        elif (isinstance(newObject, Employee)):
-            print("\nEmployee")
-            print(f"Name:\t\t{newObject.getFullName()}")
-            print(f"Email:\t\t{newObject.email}")
-            print(f"SSN:\t\t{newObject.ssn}")
+        while True:
+            choice = input("\nCustomer or employee (c/e): ")
+            global newObject
+            if (choice.lower() == 'c'):
+                print("\nDATA ENTRY")
+                fname = input("First name: ")
+                lname = input("Last name: ")
+                email = input("Email: ")
+                cust_no = input("Number: ")
+                # Create a new Customer object
+                newObject = Customer(fname.capitalize(), lname.capitalize(), email, cust_no)
+                break
+            elif (choice.lower() == 'e'):
+                print("\nDATA ENTRY")
+                fname = input("First name: ")
+                lname = input("Last name: ")
+                email = input("Email: ")
+                ssn = input("SSN: ")
+                # Create a new Employee object
+                newObject = Employee(fname.capitalize(), lname.capitalize(), email, ssn)
+                break
+            else:
+                print("Unknown command. Please try again.")
+        # Look at object created.
+        # Display the data to the user.
+        while True:
+            if (isinstance(newObject, Customer)):
+                print("\nCUSTOMER")
+                print(f"Name:\t\t{newObject.getFullName()}")
+                print(f"Email:\t\t{newObject.email}")
+                print(f"Number:\t\t{newObject.customer_no}")
+                break
+            
+            elif (isinstance(newObject, Employee)):
+                print("\nEmployee")
+                print(f"Name:\t\t{newObject.getFullName()}")
+                print(f"Email:\t\t{newObject.email}")
+                print(f"SSN:\t\t{newObject.ssn}")
+                break
 
         choice = input("\nContinue? (y/n): ")
         if (choice.lower() == 'n'):
             break
 
-print("\nBye!")
+    print("\nBye!")
 
 if __name__ == "__main__":
     main()
