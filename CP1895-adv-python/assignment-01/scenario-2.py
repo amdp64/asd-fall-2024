@@ -59,6 +59,7 @@ def main():
         # Look at object created.
         # Display the data to the user.
         while True:
+            # Check if object is a Customer
             if (isinstance(newObject, Customer)):
                 print("\nCUSTOMER")
                 print(f"Name:\t\t{newObject.getFullName()}")
@@ -66,6 +67,7 @@ def main():
                 print(f"Number:\t\t{newObject.customer_no}")
                 break
             
+            # Check if object is an Employee
             elif (isinstance(newObject, Employee)):
                 print("\nEmployee")
                 print(f"Name:\t\t{newObject.getFullName()}")
