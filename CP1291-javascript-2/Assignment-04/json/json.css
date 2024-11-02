@@ -1,0 +1,39 @@
+body {
+    width:800px;
+    border: 2px solid blueviolet;
+    margin:auto;
+    margin-top:5px;
+    padding:5px;
+}
+
+label {
+    vertical-align: top;
+}
+
+.field {
+    display: block;
+    width:150px;
+}
+
+#left {
+    width:300px;
+    float:left;
+}
+
+#right {
+    width:400px;
+    height:300px;
+    float:right;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#convert {
+    margin:auto;
+    font-weight:bold;
+    color:blueviolet
+}
