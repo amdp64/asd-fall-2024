@@ -4,6 +4,8 @@
 # CSV and SQLITE files are provided.
 # SQLite file should contain a table named Customer.
 
+# Assuming that the Cutomer table should start at '1' and autoincrement. 
+
 import sqlite3
 import pandas as pd
 
