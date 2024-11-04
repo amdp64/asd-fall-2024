@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 # Program that imports customer data from a CSV file
 # into a database table.
 
@@ -54,7 +53,6 @@ new_data.to_sql('Customer', connection, if_exists='append', index=False)
 connection.commit()
 connection.close()
 
-=======
 # Program that imports customer data from a CSV file
 # into a database table.
 
@@ -142,4 +140,3 @@ def main():
 if __name__ == "__main__":
     main()
 
->>>>>>> Stashed changes
