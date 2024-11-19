@@ -33,35 +33,28 @@ class RandomIntList(list):
         someString += str(self[i]-1)
         return someString
         
-
-#first_list = RandomIntList(12)
-#second_list = RandomIntList(12)
-#print(first_list)
-#print(first_list.getCount())
-#print(first_list.getTotal())
-#print(first_list.getAverage())
-
 def displayResult(ourList):
     print()
     print("Random Integers")
     print("=" * 15)
-    print(f"Integers:\t{print(ourList)}")
-    print(f"Count:\t\t{ourList.getCount()}")
-    print(f"Total:\t\t{ourList.getTotal()}")
-    print(f"Average:\t{round(ourList.getAverage(),1)}")
+    print(f"{'Integers:':<11}{ourList}")
+    print(f"{'Count:':<11}{ourList.getCount()}")
+    print(f"{'Total:':<11}{ourList.getTotal()}")
+    print(f"{'Average:':<11}{round(ourList.getAverage(),1)}")
 
 def main():
     print("Random Integer List")
+    userProvidedInt = int(input("\nHow many random integers should the list contain?: "))
     while True:
         while True:
             try:
-                userProvidedInt = int(input("\nHow many random integers should the list contain?: "))
                 if (userProvidedInt > 0):
                     validatedInt = userProvidedInt
                     newIntList = RandomIntList(validatedInt)
                     break
                 else:
                     print("Please enter a positive integer.")
+                    userProvidedInt = int(input("\nHow many random integers should the list contain?: "))
             except ValueError:
                 print("Please enter an integer.")
         displayResult(newIntList)

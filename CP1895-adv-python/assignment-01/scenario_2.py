@@ -62,17 +62,17 @@ def main():
             # Check if object is a Customer
             if (isinstance(newObject, Customer)):
                 print("\nCUSTOMER")
-                print(f"Name:\t\t{newObject.getFullName()}")
-                print(f"Email:\t\t{newObject.email}")
-                print(f"Number:\t\t{newObject.customer_no}")
+                print(f"{'Name:':<13}{newObject.getFullName()}")
+                print(f"{'Email:':<13}{newObject.email}")
+                print(f"{'Number:':<13}{newObject.customer_no}")
                 break
             
             # Check if object is an Employee
             elif (isinstance(newObject, Employee)):
                 print("\nEmployee")
-                print(f"Name:\t\t{newObject.getFullName()}")
-                print(f"Email:\t\t{newObject.email}")
-                print(f"SSN:\t\t{newObject.ssn}")
+                print(f"{'Name:':<13}{newObject.getFullName()}")
+                print(f"{'Email:':<13}{newObject.email}")
+                print(f"{'SSN:':<13}{newObject.ssn}")
                 break
 
         choice = input("\nContinue? (y/n): ")

@@ -5,7 +5,7 @@
 # two attributes : height/width of retangle. 
 # two methods : to calculate perimeter & area
 
-# Program should intelligently determine whether user
+# Program should determine whether user
 # wants to enter a rectangle or a square. 
 
 # Assume user will enter valid data (no input checking)
@@ -24,13 +24,14 @@ class Rectangle:
         return area
 
     def plotShape(self):
+        # Top
         for x in range(self.width):
             print("* ", end="")
         print()
-
+        # Sides
         for y in range(self.height-2):
             print("*" + ((self.width * 2 - 3) * " ") + "*")
-
+        # Bottom
         for x in range(self.width):
             print("* ", end="")
         print()
@@ -47,49 +48,28 @@ class Square(Rectangle):
         return f"This square has a length of {self.length}."
 
 def main():
-    print("Rectangle Calculator\n")
+    print("Rectangle Calculator")
     choice = True
     while choice:
-        shapeChoice = input("Rectangle or square? (r/s): ")
+        shapeChoice = input("\nRectangle or square? (r/s): ")
         if (shapeChoice.lower() == "r"):
-            continue
-            # Do rectangle stuff
+            height = int(input(f"{'Height:':<11}"))
+            width = int(input(f"{'Width:':<11}"))
+            rect = Rectangle(height, width)
+            print(f"{'Perimeter:':<11}{rect.getPerimeter()}")
+            print(f"{'Area:':<11}{rect.getArea()}")
+            rect.plotShape()
         elif (shapeChoice.lower() == "s"):
-            continue
-            # Do square stuff
-        
-
+            length = int(input(f"{'Length:':<11}"))
+            sqr = Square(length)
+            print(f"{'Perimeter:':<11}{sqr.getPerimeter()}")
+            print(f"{'Area:':<11}{sqr.getArea()}")
+            sqr.plotShape()
+        choice = input("\nContinue? (y/n): ")
+        if (choice.lower() == 'n'):
+            choice = False
+    print("\nBye!")
 
 if __name__ == "__main__":
     main()
 
-
-"""
-r1 = Rectangle(3, 10)
-print(r1)
-
-print(r1.getPerimeter())
-print(r1.getArea())
-r1.plotShape()
-
-print()
-s1 = Square(5)
-print(s1)
-print(s1.getPerimeter())
-print(s1.getArea())
-s1.plotShape()
-"""
-
-
-"""
-for x in range(s1.length):
-    print("* ", end="")
-print()
-
-for y in range(s1.length-2):
-    print("*" + ((s1.length * 2 - 3) * " ") + "*")
-
-for x in range(s1.length):
-    print("* ", end="")
-print()
-"""
