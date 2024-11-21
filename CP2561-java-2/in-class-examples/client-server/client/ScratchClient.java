@@ -37,15 +37,23 @@ public class ScratchClient {
 
                 // expecting a reply
                 try {
-                    if (input.available() == 0); // wait until something comes avaialble
+                    // if (input.available() == 0); // wait until something comes avaialble
                     // but, this may wait forever 
                     // spinning its wheels waiting 
                     buffer = (String) input.readObject();
+                    System.out.println(buffer);
                 } catch (ClassNotFoundException e) {
                     System.out.println("unknown object from server stream");
                 }
-            } while (!buffer.equals("Terminate"));
-            keyboard.close();
+
+                System.out.print("> ");
+                buffer = keyboard.nextLine();
+                sendData(buffer);
+
+                keyboard.close();
+
+            } while (true);
+            //keyboard.close();
 
         } catch (IOException e) {
             e.printStackTrace();
