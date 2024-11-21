@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "."
+    ],
+    "java.project.referencedLibraries": [
+        "/Users/andrewpayne/Documents/jackson2.18.1/jackson-datatype-jsr310-2.18.1.jar",
+        "/Users/andrewpayne/Documents/jackson2.18.1/jackson-annotations-2.18.1.jar",
+        "/Users/andrewpayne/Documents/jackson2.18.1/jackson-databind-2.18.1.jar",
+        "/Users/andrewpayne/Documents/jackson2.18.1/jackson-core-2.18.1.jar"
+    ]
+}
