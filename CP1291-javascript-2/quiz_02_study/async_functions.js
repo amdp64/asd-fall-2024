@@ -74,6 +74,7 @@
  // This is async code.
  // We don't know when the button will be pressed, 
  // but when it does execute this function. 
+ /*
  window.addEventListener('click', callback)
 
  function callback() {
@@ -98,6 +99,7 @@
         thing3();
     });
  });
+ */
 
  // Async Examples
  /*
